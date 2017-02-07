@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Решение домашнего задания к лекции 2.1 «Селекторы и свойства»</title>
+  <link rel="stylesheet" href="../../../codestyle/styles/prism.css">
+  <link rel="stylesheet" href="../../../css/styles.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+  <section class="homework-guides">
+    <h1>Решение домашнего задания к лекции 2.1 «Селекторы и свойства»</h1>
+
+    <h2>Задача №1</h2>
+
+    <div class="task">
+      <h4>Описание задания:</h4>
+      <p>Измените цвет текста в заголовке второго уровня <cite>Калуша с Калушатами</cite> на синий (blue). При этом все остальные заголовки должны остаться без изменений.</p>
+    </div>
+      
+    <p>Чтобы указать на заголовок второго уровня потребуется селектор <code>h2</code>. Но есть сложность, на странице два заголовка <code>h2</code>, а изменить нужно только один из них. Следовательно, для того, чтобы указать только на тот заголовок <code>h2</code>, который расположен внутри тега <code>div</code> и явяется его непосредственным ребёнком, потребуется дочерний селектор. Это позволит не затронуть при перекрашивании другой заголовок второго уровня — <cite>Разметка к задачам</cite>.</p>
+    <p>Наконец, чтобы перекрасить заголовок в синий цвет потребуется свойство <code>color</code>, определяющее цвет текста элемента, и его значение <code>blue</code>.</p>
+    
+    <pre>
+      <code class="language-css line-numbers">
+        div > h2 {
+            color: blue;
+        }
+      </code>
+    </pre>    
+	
+    <h2>Задача №2</h2>
+
+    <div class="task">
+      <h4>Описание задания:</h4>
+      <p>Напишите правило, которое изменит цвет текста для всех выделенных тегом <code>strong</code> упоминаний <cite>Калушат</cite> на коричневый (brown) цвет.</p>
+    </div>
+      
+    <p>Тег <code>strong</code> это такой же тег, как и любой другой, например <code>p</code> или <code>h1</code>, а значит, к нему можно обратиться просто по названию. Снова воспользуемся свойством <code>color</code>:</p>
+      
+    <pre>
+      <code class="language-css line-numbers">
+        strong {
+            color: brown;
+        }
+      </code>
+    </pre> 
+    
+    <h2>Задача №3</h2>
+
+    <div class="task">
+      <h4>Описание задания:</h4>
+      <p>Напишите правило для всех выделенных тегом <code>span</code> упоминаний <cite>Бутявки</cite>, находящихся внутри цитат (<code>blockquote</code>), измените цвет текста на желтый (yellow) и задайте полужирное начертание.</p>
+    </div>
+      
+    <p>Составляем селектор потомков — комбинацию селекторов <code>span</code> и <code>blockquote</code>, позволяющий выбрать абсолютно все теги <code>span</code>, расположенные внутри цитат <code>blockquote</code>, включая также те теги <code>span</code>, которые находятся внутри вложенных в цитаты абзацев и списков.</p>
+    <p>Для того чтобы задать полужирное начертание воспользуемся свойством <code>font-weight</code> и его значением <code>bold</code>:</p>
+      
+    <pre>
+      <code class="language-css line-numbers">
+        blockquote span {
+            color: yellow;
+            font-weight: bold;
+        }
+      </code>
+    </pre> 
+    
+    <h2>Задача №4</h2>
+
+    <div class="task">
+      <h4>Описание задания:</h4>
+      <p>Напишите правило, согласно которому все выделенные тегом <code>strong</code> упоминания <cite>Калушат</cite> внутри списка <code>ol</code> имели бы наклонное начертание.</p>
+    </div>
+      
+    <p>Для решения данного задания снова потребуется селектор потомков — <code>ol strong</code>. Дочерний селектор <code>ol > strong</code> мы не можем использовать по той причине, что в тег <code>ol</code> всегда должен быть вложен тег элемента списка <code>li</code>, следовательно <code>strong</code> никогда не окажется непосредственным ребёнком <code>ol</code>, он может быть только внуком.</p>
+    <p>Для того чтобы задать наклонное начертание используем свойство <code>font-style</code> и значение <code>oblique</code>:</p>
+      
+    <pre>
+      <code class="language-css line-numbers">
+        ol strong {
+            font-style: oblique;
+        }
+      </code>
+    </pre>  
+    
+    <p>Вы можете посмотреть, как выглядят <a href="http://codepen.io/wizjer/pen/xEaRQZ?editors=1100" title="Задание 2.1 на Codepen">выполненные задания на Codepen.</a></p>
+  </section>
+  
+  <script src="../../../codestyle/js/prism.js?v=2"></script>
+  
+</body>
+</html>
