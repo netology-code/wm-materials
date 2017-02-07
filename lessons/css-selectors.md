@@ -53,7 +53,7 @@
 **font-weight** — задает жирность шрифта (**bold**, 200)
 значение по умолчанию - 400, или normal.
 
-![font-weight](i/font-weigth.jpg)
+![font-weight](i/weight.jpg)
 
     h2 {
     	font-weight: 700;
