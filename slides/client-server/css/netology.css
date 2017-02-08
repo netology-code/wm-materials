@@ -364,6 +364,7 @@ dd {
   color: #00acf2;
   position: static;
   font-style: normal;
+  margin: 0;
 }
 
 .blockquote blockquote+figcaption {
