@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
+<head>
+  <title>Основы клиент-серверного взаимодействия</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+  <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="css/prism-fix.css">
+  <link rel="stylesheet" href="css/netology.css">
+  <link rel="stylesheet" href="css/fake-browser.css">
+
+  <style>
+    pre {
+      font-size: 70%;
+    }
+
+    .demo {
+      font-size: 50%;
+      float: right;
+    }
+
+    .accent {
+      color: #48bc36;
+    }
+  </style>
+</head>
+<body class="shower list">
+  <header class="caption">
+    <h1>Основы клиент-серверного взаимодействия</h1>
+    <p>Шлейко Александр</p>
+  </header>
+
+  <section class="slide" id="cover">
+    <h2>Основы клиент-серверного взаимодействия</h2>
+    <p>
+      <img src="i/me.jpg" alt="" class="avatar">
+      Шлейко Александр <span class="position">Нетология</span>
+    </p>
+  </section>
+  <section class="slide author" id="author">
+    <img src="i/me.jpg" alt="">
+    <h1>Шлейко Александр</h1>
+    <p class="position">программист «Tessella Studio»</p>
+    <ul class="contacts">
+      <li><a href="mailto:"><i class="fa fa-envelope-o" aria-hidden="true"></i>a.shleyko@yandex.ru</a></li>
+      <li><a href="https://www.facebook.com/shleiko"><i class="fa fa-facebook" aria-hidden="true"></i>shleiko</a></li>
+      <li><a href="skype:dustyo_O?call"><i class="fa fa-skype" aria-hidden="true"></i>dustyo_O</a></li>
+    </ul>
+  </section>
+
+  <section class="slide" id="roadmap">
+    <h2>План занятия</h2>
+    <ol>
+      <li><a href="#internet">Как работает интернет?</a></li>
+      <li><a href="#http">Протокол HTTP</a></li>
+      <li><a href="#server">Что такое сервер?</a></li>
+      <li><a href="#front-back">Что мы подразумеваем, когда говорим frontend/backend?</a></li>
+      <li><a href="#JavaScript">javascript</a></li>
+    </ol>
+  </section>
+
+  <section class="slide" id="internet">
+    <h2>Как работает интернет?</h2>
+    <img src="i/internet.jpg" style="width: 700px; display: block; margin: 10px auto 0;">
+  </section>
+  
+  <section class="slide">
+    
+    <blockquote class="blockquote" style="width: 70%; float: right;">
+      <img src="i/gandalf.jpg">
+      Интернет представляет собой (с учетом определенных упрощений) сеть соединенных между собой компьютеров без определенного центра. Если отбросить роутеры, то каждый компьютер в сети имеет свой уникальный ip адрес</blockquote>
+  </section>
+  
+  <section class="slide">
+    <img src="i/ip.jpg" style="width: 700px; display: block; margin: 10px auto 0;">
+    <p class="next">IP-адрес - сочетание из четырех (для IPv4) цифр от 0 до 255. IP адрес может быть привязан к оборудованию (номеру сетевой карты, защитой производителем).</p>
+    <p class="next">Есть и технические ip-адреса, например, 127.0.0.1 (на картинке) всегда указывает на текущий компьютер</p>    
+  </section>
+  
+  <section class="slide">
+    <h2>Вывод:</h2>    
+    <p class="next">Таким образом, зная ip-адрес, мы всегда обратимся к одному, вполне определенному, физическому, компьютеру в сети. В сети интернет, запросы на самом деле идут с нашего (клиентского) компьютера на те или иные ip адреса.</p>
+    <p class="next">Однако, в реальности через браузер мы вводим что-то вроде <a href="http://netology.ru/">http://netology.ru/</a>. Как это работает?</p>    
+  </section>  
+
+  <section class="slide">
+    <h2>Domain Name System</h2> 
+    <img src="i/com.jpg" style="width: 700px; display: block; margin: 10px auto 0;">  
+  </section>  
+  
+  <section class="slide">
+    <h2>Domain Name System</h2> 
+    <p class="next">Единственное назначение системы доменных имен (или DNS) - преобразовывать доменные имена (yandex.ru, google.com) - в ip
+адреса.</p> 
+    <p class="next">Таким образом, после того, как мы вбили в строке браузера привычный адрес любимой социальной сети, браузер сначала делает запрос на DNS сервер, преобразует доменное имя к ip адресу, к которому и пойдет запрос</p> 
+    <p class="next">Возможно, вы видели в настройках соединения вашей операционной системы пункт, касающийся адресов DNS серверов - это как раз о том, куда браузер будет обращаться с тем, чтобы преобразовать домен в ip адрес.</p>     
+    <img src="i/dns.jpg" style="width: 700px; display: block; margin: 10px auto 0;">  
+  </section>    
+  
+  <section class="slide" id="http">
+    <h2>Протокол HTTP</h2> 
+    <img src="i/http.jpg" style="width: 700px; display: block; margin: 10px auto 0;">  
+  </section>    
+  
+  <section class="slide">
+    <h2>Протокол HTTP</h2> 
+    <p class="next">После того, как мы нашли в сети компьютер, с определенным ip адресом, встает вопрос о том, как объяснить ему, что нам надо и получить от него нужную информацию.</p> 
+    <p class="next">Для этого могут быть использованы различные протоколы (FTP, IMAP, и т.д.)</p> 
+    <p class="next">Для передачи веб-страниц с сервера на наши с вами компьютеры используется протокол HTTP - протокол передачи гипертекста.</p>     
+    <p class="next">Гипертекстом называется текст веб-страниц за счет ссылок, расположенных на них - "порталов" на другие страницы.</p> 
+  </section>   
+  
+  <section class="slide">
+    <h2>Задачи, которые решает протокол HTTP</h2> 
+    <ul>
+      <li>Собственно, передача содержимого веб-страниц</li>
+      <li>Передача информации о результате запроса: все ок, или страница не найдена, либо нет прав и т.п.</li>
+      <li>Передача "заголовков" технической информации, влияющей на дальнейшую "судьбу" пользователя - установка браузером cookies, информация о кодировке и т.п.</li>
+      <li>Со стороны клиента - помимо самого запроса: передача данных, загрузка файлов и т.п.</li>
+      <li>И не только...</li>
+    </ul>
+  </section>    
+  
+  <section class="slide" id="server">
+    <h2>О сервере</h2> 
+    <img src="i/server-room.jpg" style="width: 700px; display: block; margin: 10px auto 0;">  
+  </section>    
+  
+  <section class="slide">
+    <blockquote class="blockquote" style="width: 70%; float: right;">
+    <img src="i/code.jpg">
+    На самом деле, когда мы, занимаясь веб-разработкой
+говорим "сервер", мы подразумеваем вовсе не какой-то суровый суперкомпьютер, а лишь набор программного обеспечения, способный взаимодействовать по протоколу HTTP.</blockquote>  
+  </section>  
+  
+  <section class="slide">
+    <h2 class="img-description side" style="width: 50%;">Технологии для сервера</h2> 
+    <img src="i/server.jpg" class="img-block side background">  
+  </section>   
+  
+  <section class="slide">
+    <img src="i/linux.jpg" style="width: 700px; display: block; margin: 10px auto 0;">  
+    <p class="next">В качестве операционной системы для веб-сервера, в большинстве своем, используется Linux.</p>      
+  </section>   
+  
+  <section class="slide">
+    <img src="i/lamp.jpg" style="width: 700px; display: block; margin: 10px auto 0;">  
+    <p class="next">Варианты дальнейшей начинки могут различаться.</p>    
+    <p class="next">Это может быть классическая связка Apache+PHP+Mysql, образуя вместе с линуксом аббревиатуру "lamp".</p>     
+    <p class="next">Возможны и другие сочетания:</p>     
+  </section>  
+  
+  <section class="slide">
+    <img src="i/node-mongo.jpg" style="width: 700px; display: block; margin: 10px auto 0;">  
+    <p class="next">Это может быть и, например, сочетание nodejs+mongodb.</p>      
+  </section>  
+  
+  <section class="slide">
+    <h2>Сервер</h2> 
+    <p class="next">Важно, что при любом составе пакета, какая-то часть из пакета отвечает за то, чтобы слушать и обрабатывать входящие запросы (определять, что именно запрошено) - другая, при запросе обрабатывает написанные скрипты, третья - отвечает за чтение и запись в базу данных.</p>
+    <p class="next">В случае lamp:</p>    
+    <ul>
+      <li>Apache обрабатывает входящие запросы</li>
+      <li>PHP - интерпретатор обрабатывает написанные для сервера скрипты</li>
+      <li>MySql работает с БД</li>
+    </ul>
+  </section>  
+  
+  <section class="slide">
+    <img src="i/denver.png" style="width: 700px; display: block; margin: 10px auto 0;">  
+    <p class="next">Раз "сервер" - это программное обеспечение, то значит, мы не ограничены ни Linux, ни чем-то еще другим. И вот действительно, несколько пакетов, с помощью которых можно настроить локальный сервер на windows-машине и работать с ним.</p>      
+  </section>   
+  
+  <section class="slide" id="front-back">
+    <h2>Backend/frontend</h2> 
+    <img src="i/iceberg.jpg" style="width: 700px; display: block; margin: 10px auto 0;">  
+  </section>    
+  
+  <section class="slide">
+    <h2 class="img-description side" style="width: 50%;">Backend</h2> 
+    <img src="i/backend.png" class="img-block side background">  
+  </section>   
+  
+  <section class="slide">
+    <h2>Backend</h2> 
+    <p class="next">Итак, сервер получил запрос от клиента. В качестве ответа (так как мы с вами взаимодействуем в протоколе HTTP) будет, скорее всего, гипертекст (html).</p>
+    <p class="next">Систему различных скриптов, которые позволяют формировать ответ сервера на разные запросы клиентов (различные ссылки) и называется backend'ом веб-приложения.</p>
+    <p class="next">Например, скрипт, который выводит теущее время на php может выглядеть так:</p>   
+    
+     <pre>
+      <code class="language-php">
+        ?php echo date("Y-m-d H:i"); 
+      </code>
+    </pre>    
+  </section>  
+  
+  <section class="slide">
+    <h2 class="img-description side" style="width: 50%;">Frontend</h2> 
+    <img src="i/frontend.jpg" class="img-block side background">  
+  </section>   
+  
+  <section class="slide" id="javascript">
+    <h2>Frontend</h2> 
+    <p class="next">Кроме формирования различных страниц на сервере, есть возможность "оживить" наше веб-приложение на клиенте. За это отвечает javascript.</p>
+    <p class="next">Javascript коды можно писать самому, размещая их в тегах <code><script></script></code> вашего html-документа.</p>
+    <p class="next">Можно (и нужно) также пользоваться готовыми библиотеками, которые зачастую "из коробки" имеют функционал, на самомстоятельную разработку которого понадобиться куча времени.</p>   
+    <p class="next">Для установки таких библиотек часто достаточно выполнить несложные инструкции, как тут: <a href="http://fotorama.io/set-up/">http://fotorama.io/set-up/</a></p>  
+  </section>   
+  
+  
+  <section class="slide last">
+    <p class="thanx">Задавайте вопросы и напишите отзыв о лекции!</p>
+    <address>Шлейко Александр</address>
+    <ul class="contacts">
+      <li><a href="mailto:"><i class="fa fa-envelope-o" aria-hidden="true"></i>a.shleyko@yandex.ru</a></li>
+      <li><a href="https://www.facebook.com/shleiko"><i class="fa fa-facebook" aria-hidden="true"></i>shleiko</a></li>
+      <li><a href="skype:dustyo_O?call"><i class="fa fa-skype" aria-hidden="true"></i>dustyo_O</a></li>
+    </ul>
+  </section>
+
+  <div class="progress"></div>
+  <script src="node_modules/shower-core/shower.min.js"></script>
+  <script src="js/prism.js?v=2"></script>
+  <script src="https://use.fontawesome.com/30b5a52164.js"></script>
+</body>
+</html>
