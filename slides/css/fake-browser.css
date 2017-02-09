@@ -7,6 +7,7 @@
     display: inline-block;
     position: relative;
     line-height: 0;
+    width: 100%;
 }
 
 .fake-browser-ui .frame {
