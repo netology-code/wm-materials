@@ -122,9 +122,9 @@
 Что не так с этим правилом? 
 
     p {
-      &nbsp;font-weight: 600;
-      &nbsp;text-decoration: underline;
-      &nbsp;list-style-type: circle;
+        font-weight: 600;
+        text-decoration: underline;
+        list-style-type: circle;
     }
 
 
@@ -137,7 +137,7 @@
 Правило 
 
     p {
-      &nbsp;line-height: 70px;
+        line-height: 70px;
     } 
 
 изменит: 
