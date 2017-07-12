@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../node_modules/shower-ribbon/styles/screen-16x10.css">
-  <link rel="stylesheet" href="../css/prism.css">
-  <link rel="stylesheet" href="../css/prism-fix.css">
-  <link rel="stylesheet" href="../css/netology.css">
+  <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+  <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="css/prism-fix.css">
+  <link rel="stylesheet" href="css/netology.css">
 
   <style>
-    pre {
+    .small-pre {
       font-size: 70%;
     }
 
@@ -34,13 +34,13 @@
   <section class="slide" id="cover">
     <h2>Списки и таблицы</h2>
     <p>
-      <img src="../i/dfitiskin.jpg" alt="" class="avatar">
+      <img src="i/dfitiskin.jpg" alt="" class="avatar">
       Имя Преподавателя <span class="position">Нетология</span>
     </p>
   </section>
 
   <section class="slide author" id="author">
-    <img src="../i/dfitiskin.jpg" alt="">
+    <img src="i/dfitiskin.jpg" alt="">
     <h1>Имя Преподавателя</h1>
     <p class="position">должность преподавателя и компания</p>
     <ul class="contacts">
@@ -76,9 +76,13 @@
   </section>
 
   <section class="slide" id="types">
-    <h2>Определение</h2>
-    <blockquote>Список в типографике — способ оформления различного рода перечислений или перечней. Каждый элемент списка начинается с маркера списка или номера-буквы и весь текст списка не должен выступать влево за них.</blockquote>
-    <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_(%D1%82%D0%B8%D0%BF%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0)">Википедия</a>
+    <figure class="blockquote">
+      <img src="pic/lists.jpg" alt="">
+      <blockquote>
+        <p><strong>Список в типографике</strong> — способ оформления различного рода перечислений или перечней. Каждый элемент списка начинается с маркера списка или номера-буквы и весь текст списка не должен выступать влево за них.</p>
+      </blockquote>
+      <figcaption><a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_(%D1%82%D0%B8%D0%BF%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0)">Википедия</a></figcaption>
+    </figure>
   </section>
 
   <section class="slide">
@@ -86,9 +90,9 @@
     <p>
       Списки могут быть:
       <ul>
-        <li>упорядоченные или неупорядоченные. Если последовательность перечисленных элементов не зависит от какого-то определённого логического порядка, то такой список является неупорядоченным. Если же от перестановки перечисленных элементов изменяется смысл, то такой список называется упорядоченным;</li>
-        <li>нумерованные и ненумерованные. Каждый элемент нумерованного списка начинается с порядкового номера или буквы в алфавитном порядке. Элемент ненумерованного списка начинается c маркера списка;</li>
-        <li>одноуровневые (простые) или многоуровневые.</li>
+        <li>Упорядоченные или неупорядоченные. Если последовательность перечисленных элементов не зависит от какого-то определённого логического порядка, то такой список является неупорядоченным. Если же от перестановки перечисленных элементов изменяется смысл, то такой список называется упорядоченным;</li>
+        <li>Нумерованные и ненумерованные. Каждый элемент нумерованного списка начинается с порядкового номера или буквы в алфавитном порядке. Элемент ненумерованного списка начинается c маркера списка;</li>
+        <li>Одноуровневые (простые) или многоуровневые.</li>
       </ul>
     </p>
   </section>
@@ -96,24 +100,22 @@
   <section class="slide">
     <h2>Виды списков в HTML</h2>
     <ul>
-      <li>Маркированные списки</li>
-      <li>Нумерованные списки</li>
-      <li>Списки описаний</li>
+      <li>Маркированные списки;</li>
+      <li>Нумерованные списки;</li>
+      <li>Списки описаний.</li>
     </ul>
   </section>
 
   <section class="slide" id="syntax">
     <h2>Синтаксис</h2>
     <h3>Общее</h3>
-    <p>
-      Во всех видах списков общим является то, что вложить внутрь родительского тега можно только теги пунктов списка.
-    </p>
+    <p>Во всех видах списков общим является то, что вложить внутрь родительского тега можно только теги пунктов списка.</p>
   </section>
 
   <section class="slide">
     <h2>Пример разметки списка</h2>
     <p>Хорошо</p>
-    <script type="text/plain" class="lang-markup language-html  line-numbers">
+    <script type="text/plain" class="lang-markup language-html  line-numbers small-pre">
       <ul>
         <li>Пункт один</li>
         <li>Пункт два</li>
@@ -121,7 +123,7 @@
       </ul>
     </script>
     <p>Плохо</p>
-    <script type="text/plain" class="lang-markup language-html  line-numbers">
+    <script type="text/plain" class="lang-markup language-html  line-numbers small-pre">
       <ul>
         <li>Пункт один</li>
         <p>Какой-то текст</p>
@@ -132,8 +134,8 @@
 
   <section class="slide">
     <h2>Маркированные списки</h2>
-    <p>Родительский парный тег <code>UL</code> (<i>англ. Unordered List - неупорядоченный список</i>). Список начинается открывающимся тегом <code>&lt;ul></code> и заканчивается закрывающим тегом <code>&lt;/ul></code></p>
-    <p>Парный тег пункта списка <code>LI</code> (<i>англ. List Item - элемент списка</i>). Каждый пункт списка начинается с тега <code>&lt;li></code> и заканчивается закрывающим тегом <code>&lt;/li></code></p>
+    <p>Родительский парный тег <code>UL</code> (<i>англ. Unordered List — неупорядоченный список</i>). Список начинается открывающимся тегом <code>&lt;ul></code> и заканчивается закрывающим тегом <code>&lt;/ul></code></p>
+    <p>Парный тег пункта списка <code>LI</code> (<i>англ. List Item — элемент списка</i>). Каждый пункт списка начинается с тега <code>&lt;li></code> и заканчивается закрывающим тегом <code>&lt;/li></code></p>
   </section>
 
   <section class="slide">
@@ -169,8 +171,8 @@
 
   <section class="slide">
     <h2>Нумерованные списки</h2>
-    <p>Родительский парный тег <code>OL</code> (<i>англ. Ordered List - упорядоченный список</i>). Список начинается открывающимся тегом <code>&lt;ol></code> и заканчивается закрывающим тегом <code>&lt;/ol></code></p>
-    <p>Парный тег пункта списка <code>LI</code> (<i>англ. List Item - элемент списка</i>). Каждый пункт списка начинается с тега <code>&lt;li></code> и заканчивается закрывающим тегом <code>&lt;/li></code></p>
+    <p>Родительский парный тег <code>OL</code> (<i>англ. Ordered List — упорядоченный список</i>). Список начинается открывающимся тегом <code>&lt;ol></code> и заканчивается закрывающим тегом <code>&lt;/ol></code></p>
+    <p>Парный тег пункта списка <code>LI</code> (<i>англ. List Item — элемент списка</i>). Каждый пункт списка начинается с тега <code>&lt;li></code> и заканчивается закрывающим тегом <code>&lt;/li></code></p>
   </section>
 
   <section class="slide">
@@ -205,15 +207,15 @@
 
   <section class="slide">
     <h2>Списки описаний</h2>
-    <p>Родительский парный тег <code>DL</code> (<i>англ. Description List - список описаний</i>). Список начинается открывающимся тегом <code>&lt;dl></code> и заканчивается закрывающим тегом <code>&lt;/dl></code></p>
-    <p>Парный тег, в котором располагается сам термин - <code>DT</code> (<i>англ. Definition Term - термин</i>).</p>
-    <p>Парный тег, внутрь которого помещается расшифровка, определение термина - <code>DD</code> (<i>англ. Description - описание</i>).</p>
+    <p>Родительский парный тег <code>DL</code> (<i>англ. Description List — список описаний</i>). Список начинается открывающимся тегом <code>&lt;dl></code> и заканчивается закрывающим тегом <code>&lt;/dl></code></p>
+    <p>Парный тег, в котором располагается сам термин — <code>DT</code> (<i>англ. Definition Term — термин</i>).</p>
+    <p>Парный тег, внутрь которого помещается расшифровка, определение термина — <code>DD</code> (<i>англ. Description — описание</i>).</p>
   </section>
 
   <section class="slide">
     <h2>Задача</h2>
     <p>Переходим к заполнению страницы с маршрутом.</p>
-    <p>Для игрового момента обычные пункты маршрута обозначены выдуманными словами.Чтобы родителям было понятно, где же будут находится их дети - нам нужно дать расшифровку каждого выдуманного слова.</p>
+    <p>Для игрового момента обычные пункты маршрута обозначены выдуманными словами. Чтобы родителям было понятно, где же будут находится их дети — нам нужно дать расшифровку каждого выдуманного слова.</p>
   </section>
 
   <section class="slide">
@@ -247,7 +249,7 @@
   <section class="slide" id="start">
     <h2>Задача</h2>
     <p>Дежурный врач попросил добавить примечание в список прививок и справок.</p>
-    <p>Текст примечания: "С момента проведения вакцинации должно пройти не больше 3 месяцев."</p>
+    <p>Текст примечания: «С момента проведения вакцинации должно пройти не больше 3 месяцев.»</p>
     <p>Примечание относится к прививке от энцефалита.</p>
   </section>
 
@@ -263,15 +265,14 @@
       <li>Справка от педиатра</li>
     </ol>
     </script>
-    <p><span class="accent">Нет!</span></p>
-    <p class="note">В список должны быть вложены только пункты списка.</p>
+    <p><span class="accent">Нет!</span> В список должны быть вложены только пункты списка.</p>
   </section>
 
   <section class="slide">
     <h2>Изменяем начало нумерации</h2>
     <p>Изменяем первую цифру с помощью HTML-атрибута <code>start</code></p>
     <p>Решение <a href="http://codepen.io/solarrust/pen/VjoRPg/" target="_blank" class="demo">Живой пример</a></p>
-    <script type="text/plain" class="lang-markup language-html line-numbers">
+    <script type="text/plain" class="lang-markup language-html line-numbers small-pre">
     <ol>
       <li>Прививка от кори</li>
       <li>Прививка от клещевого энцефалита</li>
@@ -294,14 +295,14 @@
 
   <section class="slide">
     <h2>Задача</h2>
-    <p>Инструктор, который пойдет с детьми в поход, боится, что под “Сменной одеждой” каждый родитель может понять разные предметы одежды. И просит нас уточнить этот пункт, добавив к нему пункты с конкретной обязательной одеждой.</p>
+    <p>Инструктор, который пойдет с детьми в поход, боится, что под «Сменной одеждой» каждый родитель может понять разные предметы одежды. И просит нас уточнить этот пункт, добавив к нему пункты с конкретной обязательной одеждой.</p>
     <p>Есть более важные предметы одежды, которые обязательно должны быть в рюкзаке ребенка, а есть необязательные, но желательные. </p>
   </section>
 
   <section class="slide">
     <h2>Решение</h2>
     <p>Итог <a href="http://codepen.io/solarrust/pen/mENoNV/" target="_blank" class="demo">Живой пример</a></p>
-    <script type="text/plain" class="lang-markup language-html line-numbers">
+    <script type="text/plain" class="lang-markup language-html line-numbers small-pre">
       <ul>
         <li>Компас</li>
         <li>Палатка</li>
@@ -334,11 +335,11 @@
 
   <section class="slide" id="tsyntax">
     <h2>Синтаксис</h2>
-    <p>Таблица всегда состоит из строк, а строки - из ячеек.</p>
+    <p>Таблица всегда состоит из строк, а строки — из ячеек.</p>
     <p>Создаем таблицу  при помощи парного родительского тега <code>table</code>.</p>
-    <p>Затем внутрь таблицы помещается необходимое количество строк при помощи парного тега <code>TR</code> (<i>англ. <i>table row</i> - строка таблицы</i>)</p>
+    <p>Затем внутрь таблицы помещается необходимое количество строк при помощи парного тега <code>TR</code> (<i>англ. <i>table row</i> — строка таблицы</i>)</p>
     <p>В каждой строке может лежать любое (нужное нам) количество ячеек.</p>
-    <p>Ячейка создается при помощи парного тега <code>TD</code> (<i>англ. <i>table data cells</i> - ячейка данных таблицы</i>).</p>
+    <p>Ячейка создается при помощи парного тега <code>TD</code> (<i>англ. <i>table data cells</i> — ячейка данных таблицы</i>).</p>
     <p>Ячейки формируют колонки данных.</p>
   </section>
 
@@ -376,14 +377,14 @@
   <section class="slide">
     <h2>Решение</h2>
     <p>Итог <a href="http://codepen.io/solarrust/pen/ZONOJV/" class="demo" target="_blank">Живой пример</a></p>
-    <script type="text/plain"  class="lang-markup language-html line-numbers">
+    <script type="text/plain"  class="lang-markup language-html line-numbers small-pre">
     <table>
       <tr>
         <td></td>
         <td></td>
         <td></td>
       </tr>
-      // еще 6 раз
+      // Еще 6 раз
       <tr>
         <td></td>
         <td></td>
@@ -396,7 +397,7 @@
   <section class="slide">
     <h2>Решение</h2>
     <p>Итог <a href="http://codepen.io/solarrust/pen/oLKvNZ/" class="demo" target="_blank">Живой пример</a></p>
-    <script type="text/plain"  class="lang-markup language-html line-numbers">
+    <script type="text/plain"  class="lang-markup language-html line-numbers small-pre">
     <table>
       <tr>
         <td>Гермиона Грейнджер</td>
@@ -415,10 +416,10 @@
 
   <section class="slide">
     <h2>Заголовки</h2>
-    <p>Чтобы создать строку с заголовками колонок и отделить эту строку от основных данных таблицы используется парный тег <code>THEAD</code> (<i>англ. table head - "голова" таблицы</i>).</p>
+    <p>Чтобы создать строку с заголовками колонок и отделить эту строку от основных данных таблицы используется парный тег <code>THEAD</code> (<i>англ. table head — "голова" таблицы</i>).</p>
     <p><code>thead</code> следует использовать в самом начале таблицы. Что логично, поскольку заголовки колонок должны располагаться сверху.</p>
     <p>Допускается использование не более одного <code>thead</code> в пределах одной таблицы.</p>
-    <p>Должен идти в разметке сразу после тега <code>table</code>. Внутрь вкладывается тег ряда - <code>tr</code>, а в него теги ячеек - <code>td</code>.</p>
+    <p>Должен идти в разметке сразу после тега <code>table</code>. Внутрь вкладывается тег ряда — <code>tr</code>, а в него теги ячеек — <code>td</code>.</p>
   </section>
 
   <section class="slide">
@@ -429,7 +430,7 @@
   <section class="slide">
     <h2>Решение</h2>
     <p>Итог <a href="http://codepen.io/solarrust/pen/qNzZgR/" class="demo" target="_blank">Живой пример</a></p>
-    <script type="text/plain"  class="lang-markup language-html line-numbers">
+    <script type="text/plain"  class="lang-markup language-html line-numbers small-pre">
     <table>
       <thead>
         <tr>
@@ -450,7 +451,7 @@
 
   <section class="slide">
     <h2>Тело таблицы</h2>
-    <p>После <code>thead</code> должен идти основной контент таблицы. Его так же группируют по смыслу, для этого используется парный тег <code>TBODY</code> (<i>англ. table body - "тело" таблицы</i>)</p>
+    <p>После <code>thead</code> должен идти основной контент таблицы. Его так же группируют по смыслу, для этого используется парный тег <code>TBODY</code> (<i>англ. table body — «тело» таблицы</i>)</p>
     <p>Тел таблицы может быть несколько.</p>
   </section>
 
@@ -462,7 +463,7 @@
   <section class="slide">
     <h2>Решение</h2>
     <p>Итог <a href="http://codepen.io/solarrust/pen/mAbAzm/" class="demo" target="_blank">Живой пример</a></p>
-    <script type="text/plain"  class="lang-markup language-html line-numbers">
+    <script type="text/plain"  class="lang-markup language-html line-numbers small-pre">
     <table>
       <tbody>
         <tr>
@@ -487,7 +488,7 @@
   <section class="slide">
     <h2>Итого</h2>
     <p>В наверняка не раз видели таблицы с расчетами, где в нижней строке выводится сумма или какой-то вывод из приведенных выше цифр.</p>
-    <p>Для строк ИТОГО используется парный тег <code>TFOOT</code> (<i>англ. table footer - "подвал" таблицы</i>).</p>
+    <p>Для строк ИТОГО используется парный тег <code>TFOOT</code> (<i>англ. table footer — «подвал» таблицы</i>).</p>
     <p>Синтаксис его использования ничем не отличается от предыдущих логических элементов <code>thead</code> и <code>tbody</code>.</p>
   </section>
 
@@ -499,7 +500,7 @@
   <section class="slide">
     <h2>Решение</h2>
     <p>Итог <a href="http://codepen.io/solarrust/pen/AXZApL/" class="demo" target="_blank">Живой пример</a></p>
-    <script type="text/plain"  class="lang-markup language-html line-numbers">
+    <script type="text/plain"  class="lang-markup language-html line-numbers small-pre">
     <table>
       <thead>
         // Заголовки
@@ -527,11 +528,16 @@
 
   <section class="slide">
     <h2>Горизонтальное объединение ячеек</h2>
-    <p>HTML-атрибут <code>colspan</code> (<i>англ. span - охват</i>).</p>
-    <p>Указывается для тега ячейки - <code>td</code>.</p>
+    <p>HTML-атрибут <code>colspan</code> (<i>англ. span — охват</i>).</p>
+    <p>Указывается для тега ячейки — <code>td</code>.</p>
     <p>Значением этих атрибутов может быть только целое положительное число.</p>
-    <h3>Синтаксис</h3>
-    <p><code>&lt;td colspan="3">Текст&lt;/td></code></p>
+  </section>
+
+  <section class="slide">
+    <h2>Синтаксис</h2>
+    <script type="text/plain"  class="lang-markup language-html">
+    <td colspan="3">Текст</td>
+    </script>
     <p><span class="accent">Важно!</span> Следите за суммарным количеством ячеек в строках с учетом охвата.</p>
   </section>
 
@@ -543,7 +549,7 @@
   <section class="slide">
     <h2>Решение</h2>
     <p>Итог <a href="http://codepen.io/solarrust/pen/RRXbNy/" class="demo" target="_blank">Живой пример</a></p>
-    <script type="text/plain"  class="lang-markup language-html line-numbers">
+    <script type="text/plain"  class="lang-markup language-html line-numbers small-pre">
     < ... >
       <tbody>
         <tr>
@@ -565,7 +571,7 @@
     <h2>Вертикальное объединение ячеек</h2>
     <p>Можно общединять ячейки не только по горизонтали, но и по вертикали.</p>
     <p>Для этого используется атрибут <code>rowspan</code>.</p>
-    <p>Он так же применяется к тегу ячейки - <code>td</code>.</p>
+    <p>Он так же применяется к тегу ячейки — <code>td</code>.</p>
   </section>
 
   <section class="slide">
@@ -576,7 +582,7 @@
   <section class="slide">
     <h2>Решение</h2>
     <p>Итог <a href="http://codepen.io/solarrust/pen/qNZWRP/" class="demo" target="_blank">Живой пример</a></p>
-    <script type="text/plain"  class="lang-markup language-html line-numbers">
+    <script type="text/plain"  class="lang-markup language-html line-numbers small-pre">
     < ... >
         // День недели
         <tr>
@@ -615,8 +621,8 @@
     <h2><code>figure</code></h2>
     <p>Мы можем отдельно разместить картинку и отдельно написать текст. Но такой код не будет связан между собой по смыслу.</p>
     <p>Специально для создания связи между изображением и подписью к нему были созданы отдельные теги.</p>
-    <p>Тег <code>figure</code> - парный родительский тег. Внутрь него вложен парный тег <code>figcaption</code>.</p>
-    <p class="note"><code>figcaption</code> является не обязательным - фигура может сущестовать и без описания.</p>
+    <p>Тег <code>figure</code> — парный родительский тег. Внутрь него вложен парный тег <code>figcaption</code>.</p>
+    <p class="note"><code>figcaption</code> является не обязательным — фигура может сущестовать и без описания.</p>
   </section>
 
   <section class="slide">
@@ -661,13 +667,13 @@
     <h2>Подведем итоги</h2>
     <p>Мы умеем:</p>
     <ol>
-      <li>Создавать маркированный список</li>
-      <li>Создавать нумерованный список</li>
-      <li>Создавать список определений</li>
-      <li>Правильно вкладывать несколько уровней списков друг в друга</li>
-      <li>Создавать таблицы с любым количеством строк и колонок</li>
-      <li>Объединять колонки по вертикали и горизонтали</li>
-      <li>Связывать по смыслу картинку и подпись к ней при помощи фигуры</li>
+      <li>Создавать маркированный список;</li>
+      <li>Создавать нумерованный список;</li>
+      <li>Создавать список определений;</li>
+      <li>Правильно вкладывать несколько уровней списков друг в друга;</li>
+      <li>Создавать таблицы с любым количеством строк и колонок;</li>
+      <li>Объединять колонки по вертикали и горизонтали;</li>
+      <li>Связывать по смыслу картинку и подпись к ней при помощи фигуры.</li>
     </ol>
   </section>
 
@@ -682,8 +688,8 @@
   </section>
 
   <div class="progress"></div>
-  <script src="../node_modules/shower-core/shower.min.js"></script>
-  <script src="../js/prism.js?v=2"></script>
+  <script src="node_modules/shower-core/shower.min.js"></script>
+  <script src="js/prism.js?v=2"></script>
   <script src="https://use.fontawesome.com/30b5a52164.js"></script>
 </body>
 </html>

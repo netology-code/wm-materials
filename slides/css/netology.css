@@ -12,9 +12,22 @@ h3 {
   text-transform: uppercase;
 }
 
+/* Отступ от блока с кодом и от окна браузера */
 p + .fake-browser-ui,
-p + pre {
+p + pre,
+p + script {
   margin-top: 15px !important;
+}
+
+/* Размеры картинки, если на слайде только она */
+.slide > img {
+  max-height: 90%;
+  max-width: 90%;
+}
+
+/* Отступ картинки, если она идет сразу после абзаца */
+p + img {
+  margin-top: 15px;
 }
 
 /* Изменяем цвет прогрессбара */
@@ -73,23 +86,14 @@ h2:not(.shout):before {
 /* Стили для обложки презентации */
 #cover {
   background: url(../i/logo.svg) no-repeat 10% 10%;
-  background-size: 20%;
+  background-size: 30%;
   background-color: #00acf2;
   position: relative;
   letter-spacing: normal;
   color: #00acf2;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: space-around;
+  flex-direction: column;
   padding: 0 0 0 100px;
 }
 
@@ -149,7 +153,6 @@ h2:not(.shout):before {
 /* Стили слайда автора */
 .author {
   text-align: center;
-  background: -webkit-radial-gradient(center 30% circle, #eef9ff 0%, #eef9ff 35%, #f6fbfe 35%, #f6fbfe 60%, white 60%, white 100%);
   background: radial-gradient(circle at center 30%, #eef9ff 0%, #eef9ff 35%, #f6fbfe 35%, #f6fbfe 60%, white 60%, white 100%);
 }
 
@@ -157,11 +160,6 @@ h2:not(.shout):before {
   max-width: 256px;
   max-height: 256px;
   border-radius: 50%;
-  /*box-shadow:
-    0px 0px 10px 150px rgba(238, 249, 255, 1),
-    0px 0px 10px 300px rgba(238, 249, 255, 0.5);
-  -webkit-print-color-adjust:exact;
-  -webkit-filter:opacity(1);*/
 }
 
 .author h1 {
@@ -200,7 +198,7 @@ h2:not(.shout):before {
 /* End */
 
 /* Блоки с цифрами и подписями */
-dl {
+dl.highlights {
   display: inline-block;
   max-width: 25%;
   padding: 0 15px;
@@ -209,13 +207,13 @@ dl {
   box-sizing: border-box;
 }
 
-dt {
+dl.highlights dt {
   font-size: 72px;
   font-weight: 700;
   line-height: 1.5;
 }
 
-dt:after {
+dl.highlights dt:after {
   content: "";
   display: block;
   width: 65px;
@@ -224,9 +222,20 @@ dt:after {
   margin: 0 auto 30px;
 }
 
-dd {
+dl.highlights dd {
   font-size: 20px;
   line-height: 1.2;
+}
+
+dt {
+  float: left;
+  font-weight: bold;
+}
+
+dt::after {
+  content: "—";
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 /* Четыре блока с подписями в ряд */
@@ -282,7 +291,9 @@ dd {
 }
 
 .img-block img {
-  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .img-description {
@@ -375,11 +386,10 @@ dd {
 .slide blockquote::before {
   content: "«";
   display: block;
-  font-size: 120px;
+  font-size: 68px;
   color: #00acf2;
   position: static;
   font-style: normal;
-  margin: 0;
 }
 
 .blockquote blockquote+figcaption {
@@ -400,24 +410,14 @@ dd {
 /* Последний слайд */
 .last {
   background: url(../i/logo.svg) no-repeat center 20%;
-  background-size: 25%;
+  background-size: 35%;
   background-color: #00acf2;
   color: #00acf2;
   text-align: center;
   padding: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .last *,
@@ -451,30 +451,49 @@ address {
 }
 
 .chapter {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .chapter h2 {
   font-size: 86px;
   width: 100%;
 }
+
+.two-pictures {
+    display: block;
+    position: relative;
+}
+
+.two-pictures img {
+    display: inline-block;
+    max-width: 50%;
+    vertical-align: bottom;
+}
+
 /* End */
-.small{
-  font-size: 11px;
+
+/* Стиль для комментарием в тексте */
+.comment {
+  color: #979a9e;
+}
+/* End */
+
+/* Красный текст для демонстрации ошибки */
+.error {
+  color: #cc0000;
+}
+/* End */
+
+/* Стили для ссылки на песочницу */
+.demo {
+  font-size: 50%;
+  float: right;
+}
+/* End */
+
+p.topped{
+  margin-top: -1.2em;
 }
