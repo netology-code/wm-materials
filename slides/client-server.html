@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="node_modules/shower-ribbon/styles/screen-16x10.css">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
   <link rel="stylesheet" href="css/prism.css">
   <link rel="stylesheet" href="css/prism-fix.css">
   <link rel="stylesheet" href="css/netology.css">
@@ -21,17 +21,12 @@
     <h2>Основы клиент-серверного взаимодействия</h2>
     <p>
       <img src="i/shleiko.jpg" alt="" class="avatar">
-      Шлейко Александр <span class="position">Яндекс</span>
+      Шлейко Александр <span class="position"></span>
     </p>
-  </section>
-  <section class="slide author" id="author">
-    <img src="i/shleiko.jpg" alt="">
-    <h1>Шлейко Александр</h1>
-    <p class="position">Разработчик интерфейсов в Яндекс</p>
   </section>
 
   <section class="slide" id="roadmap">
-    <h2>План занятия</h2>
+    <h2>В уроке</h2>
     <ol>
       <li><a href="#internet">Как работает интернет?</a></li>
       <li><a href="#http">Протокол HTTP</a></li>
@@ -41,14 +36,16 @@
     </ol>
   </section>
 
-  <section class="slide chapter" id="internet">
+  <section class="slide" id="internet">
     <h2>Как работает интернет?</h2>
-    <img src="pic/internet.png" alt="">
+    <div style="position: absolute; left: 0; bottom: 0; width: 100%; height: 350px; background-color: #00acf2; overflow: visible;">
+      <img src="pic/internet.png" alt="" style="position: absolute; left: 150px; bottom:0; height: 450px;">
+    </div>
   </section>
 
   <section class="slide">
     <figure class="blockquote">
-      <img src="pic/gandalf.jpg" style="display: block;">
+      <img src="pic/gandalf.jpg">
       <blockquote>
         <p>Интернет представляет собой (с учетом определенных упрощений) сеть соединенных между собой компьютеров без определенного центра. Если отбросить роутеры, то каждый компьютер в сети имеет свой уникальный IP-адрес.</p>
       </blockquote>
@@ -56,21 +53,24 @@
   </section>
 
   <section class="slide">
-    <h2>IP-адрес</h2>
-    <img src="pic/ip.jpg" style="width: 400px; display: block; margin: 10px auto 0;">
-    <p><b>IP-адрес</b> – сочетание из четырех (для IPv4) цифр от 0 до 255. IP-адрес может быть привязан к оборудованию (номеру сетевой карты, зашитый производителем).</p>
-    <p>Есть и технические IP-адреса, например, <code>127.0.0.1</code> всегда указывает на текущий компьютер.</p>
+    <div style="position: absolute; left: 0; top: 0; width: 100%; height: 290px; background-color: #00acf2; z-index:1;"></div>
+    <div style="position: absolute; bottom: 50px; z-index: 2;">
+      <img src="pic/ip.jpg" style="width: 400px; display: block; margin: 50px auto;">
+      <p><b>IP-адрес</b> – сочетание из четырех (для IPv4) цифр от 0 до 255. IP-адрес может быть привязан к оборудованию (номеру сетевой карты, зашитый производителем).</p>
+      <p>Есть и технические IP-адреса, например, <code>127.0.0.1</code> всегда указывает на текущий компьютер.</p>
+    </div>
   </section>
 
   <section class="slide">
-    <h2>Вывод</h2>
+    <h2>Вывод:</h2>
     <p>Таким образом, зная IP-адрес, мы всегда обратимся к одному, вполне определенному, физическому компьютеру в сети. В сети интернет запросы на самом деле идут с нашего (клиентского) компьютера на те или иные IP-адреса.</p>
     <p>Однако в реальности через браузер мы вводим что-то вроде <a href="http://netology.ru/">http://netology.ru/</a>. Как это работает?</p>
   </section>
 
-  <section class="slide chapter">
+  <section class="slide">
     <h2>Domain Name System</h2>
-    <img src="pic/dns.png" alt="">
+    <div style="position: absolute; left: 0; bottom: 0; width: 100%; height: 300px; background-color: #00acf2; z-index:1"></div>
+    <img src="pic/dns.png" alt="" style="position: absolute; bottom: 0; display: block; z-index: 2;">
   </section>
 
   <section class="slide">
@@ -85,9 +85,10 @@
     </div>
   </section>
 
-  <section class="slide chapter" id="http">
+  <section class="slide" id="http">
     <h2>Протокол HTTP</h2>
-    <img src="pic/http.jpg" alt="">
+    <div style="position: absolute; left: 0; bottom: 0; width: 100%; height: 350px; background-color: #00acf2; z-index:1"></div>
+    <img src="pic/http.jpg" alt="" style="position: absolute; left: 100px; bottom: 0; display: block; height: 450px; z-index: 2;">
   </section>
 
   <section class="slide">
@@ -109,40 +110,57 @@
     </ul>
   </section>
 
-  <section class="slide chapter" id="server">
+  <section class="slide" id="server">
     <h2>О сервере</h2>
-    <img src="pic/server-room.jpg" alt="">
+    <div style="position: absolute; left: 0; bottom: 0; width: 100%; height: 350px; background-color: #00acf2; z-index:1"></div>
+    <img src="pic/server-room.jpg" alt="" style="position: absolute; left: 50px; bottom: 0; display: block; z-index: 2;">
   </section>
 
   <section class="slide">
     <figure class="blockquote">
-      <img src="pic/code.jpg">
+      <img src="pic/code.png">
       <blockquote>
         <p>На самом деле, когда мы, занимаясь веб-разработкой, говорим «<b>сервер</b>», мы подразумеваем вовсе не какой-то суровый суперкомпьютер, а лишь набор программного обеспечения, способный взаимодействовать по протоколу HTTP.</p>
       </blockquote>
     </figure>
   </section>
 
-  <section class="slide chapter">
-    <img src="pic/server.jpg">
-    <h2>Технологии для сервера</h2>
+  <section class="slide">
+    <div style="position: absolute; left: 0; bottom: 0; height: 100%; width: 47%; background-color: #00acf2;">
+      <img src="pic/server.jpg" style="position: absolute; left: 0; top: 150px; width: 430px;">
+    </div>
+    <div style="position: absolute; right: 0; top: 0; height: 100%; width: 53%;">
+      <h2 style="position: absolute; left: 50px; top: 250px;">Технологии для сервера</h2>
+    </div>
   </section>
 
   <section class="slide">
-    <img src="pic/linux.jpg" style="width: 400px; display: block; margin: 10px auto 0;">
-    <p>В качестве операционной системы для веб-сервера, в большинстве своем, используется Linux.</p>
+    <div style="position: absolute; left: 0; top: 0; width: 100%; height: 320px; background-color: #00acf2; z-index:1;">
+      <img src="pic/linux.jpg" style="height: 400px; display: block; margin: 10px auto 0;">
+    </div>
+    <div style="position: absolute; bottom: 110px; z-index: 2;">
+        <p>В качестве операционной системы для веб-сервера, в большинстве своем, используется Linux.</p>
+    </div>
   </section>
 
   <section class="slide">
-    <img src="pic/lamp.jpg" style="width: 400px; display: block; margin: 10px auto 0;">
-    <p>Варианты дальнейшей начинки могут различаться.</p>
-    <p>Это может быть классическая связка Apache+PHP+Mysql, образуя вместе с линуксом аббревиатуру «<b>lamp</b>».</p>
-    <p>Возможны и другие сочетания:</p>
+    <div style="position: absolute; left: 0; top: 0; width: 100%; height: 320px; background-color: #00acf2;">
+      <img src="pic/lamp.jpg" style="height: 360px; display: block; margin: 10px auto 0;">
+    </div>
+    <div style="position: absolute; bottom: 90px;">
+      <p>Варианты дальнейшей начинки могут различаться.</p>
+      <p>Это может быть классическая связка Apache+PHP+Mysql, образуя вместе с линуксом аббревиатуру «<b>lamp</b>».</p>
+      <p>Возможны и другие сочетания:</p>
+    </div>
   </section>
 
   <section class="slide">
-    <img src="pic/node-mongo.jpg" style="width: 400px; display: block; margin: 10px auto 0;">
-    <p>Это может быть и, например, сочетание nodejs+mongodb.</p>
+    <div style="position: absolute; left: 0; top: 0; width: 100%; height: 320px; background-color: #00acf2;">
+      <img src="pic/node-mongo.jpg" style="height: 365px; display: block; margin: 20px 150px 0;">
+    </div>
+    <div style="position: absolute; bottom: 150px;">
+      <p>Это может быть и, например, сочетание nodejs+mongodb.</p>
+    </div>
   </section>
 
   <section class="slide">
@@ -156,18 +174,28 @@
   </section>
 
   <section class="slide">
-    <img src="pic/denver.png" style="width: 600px; display: block; margin: 10px auto 0;">
-    <p>Раз «сервер» – это программное обеспечение, то значит, мы не ограничены ни Linux, ни чем-то еще другим. И вот действительно несколько пакетов, с помощью которых можно настроить локальный сервер на windows-машине и работать с ним.</p>
+    <div style="position: absolute; left: 0; top: 0; width: 100%; height: 320px; background-color: #00acf2;">
+      <img src="pic/denver.png" style="height: 250px; display: block; margin: 30px auto 0;">
+    </div>
+    <div style="position: absolute; bottom: 150px;">
+      <p>Раз «сервер» – это программное обеспечение, то значит, мы не ограничены ни Linux, ни чем-то еще другим. И вот действительно несколько пакетов, с помощью которых можно настроить локальный сервер на windows-машине и работать с ним.</p>
+    </div>
   </section>
 
-  <section class="slide chapter" id="front-back">
+  <section class="slide" id="front-back">
     <h2>Backend/frontend</h2>
-    <img src="pic/back-front.png">
+    <div style="position: absolute; left: 0; bottom: 0; width: 100%; height: 350px; background-color: #00acf2; overflow: visible;">
+      <img src="pic/back-front.png" alt="" style="position: absolute; left: 150px; bottom:0; height: 450px;">
+    </div>
   </section>
 
-  <section class="slide chapter">
-    <h2>Backend</h2>
-    <img src="pic/backend.png">
+  <section class="slide">
+    <div style="position: absolute; left: 0; bottom: 0; height: 100%; width: 47%; background-color: #00acf2;">
+      <img src="pic/backend.png" style="position: absolute; left: 100px; top: 150px; height: 310px;">
+    </div>
+    <div style="position: absolute; right: 0; top: 0; height: 100%; width: 53%;">
+      <h2 style="position: absolute; left: 50px; top: 250px;">Backend</h2>
+    </div>
   </section>
 
   <section class="slide">
@@ -183,9 +211,13 @@
     </pre>
   </section>
 
-  <section class="slide chapter">
-    <h2>Frontend</h2>
-    <img src="pic/frontend.png">
+  <section class="slide">
+    <div style="position: absolute; left: 0; bottom: 0; height: 100%; width: 47%; background-color: #00acf2;">
+      <img src="pic/frontend.png" style="position: absolute; left: 0; top: 150px; height: 260px;">
+    </div>
+    <div style="position: absolute; right: 0; top: 0; height: 100%; width: 53%;">
+      <h2 style="position: absolute; left: 50px; top: 250px;">Frontend</h2>
+    </div>
   </section>
 
   <section class="slide" id="javascript">
@@ -207,7 +239,7 @@
   </section>
 
   <div class="progress"></div>
-  <script src="node_modules/shower-core/shower.min.js"></script>
+  <script src="shower/shower.min.js"></script>
   <script src="js/prism.js?v=2"></script>
   <script src="https://use.fontawesome.com/30b5a52164.js"></script>
 </body>
