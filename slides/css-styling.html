@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>CSS: Селекторы и свойства</title>
+    <title>Оформление текстовых блоков с помощью CSS</title>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -263,7 +263,7 @@
   <section class="slide">
     <h2>Меняем жирность заголовков</h2>
     <ul>
-      <li>C помощью какого правила можно сделать уменьшить жирность всех заголовков до значения 200?</li>
+      <li>C помощью какого правила можно уменьшить жирность всех заголовков до значения 200?</li>
     </ul>
     <pre>
       <code class="language-css  line-numbers">
@@ -273,10 +273,10 @@
       </code>
     </pre>
   </section>
-  <section class="slide chapter">
+  <section class="slide chapter" id="properties">
     <h2>Оформление текстовых блоков с помощью CSS</h2>
   </section>
-  <section class="slide">
+  <section class="slide" id="font-properties">
     <h2>Основные свойства шрифта</h2>
     <p>На прошлом занятии мы уже успели познакомиться с некоторыми свойствами, при помощи которых мы можем управлять внешним видом шрифта. Давайте вспомним, какие это были свойства:</p>
     <ul>
@@ -286,11 +286,11 @@
       <li><code>color</code> — задает цвет шрифта.</li>
     </ul>
   </section>
-  <section class="slide">
+  <section class="slide" id="font-transform">
     <h2>Еще свойства шрифта</h2>
     <ul>
       <li><code>font-family</code> — гарнитура шрифта — <code>serif</code>, <code>sans-serif</code>, <code>Arial</code>;</li>
-      <li><code>line-height</code> — междустрочный интервал;</li>
+      <li><code>line-height</code> — межстрочный интервал;</li>
       <li><code>text-decoration</code> — <code>underline</code> сделает надпись подчеркнутой, <code>overline</code> добавит линию выше надписи, <code>line-throught</code> — для перечеркнутой надписи;
       </li>
       <li><code>text-transform</code> — <code>uppercase</code> сделает все символы заглавными, <code>lowercase</code> сделает все символы строчными;</li>
@@ -464,7 +464,7 @@
       </div>
     </div>
   </section>
-  <section class="slide chapter">
+  <section class="slide chapter" id="list-properties">
     <h2>Свойства списков</h2>
   </section>
   <section class="slide">
@@ -594,15 +594,15 @@
       </div>
     </div>
   </section>
-  <section class="slide chapter">
+  <section class="slide chapter" id="colors">
     <h2>Цвет в CSS</h2>
   </section>
-  <section class="slide">
+  <section class="slide" id="color-model">
     <h2>Цветовая модель RGB</h2>
     <img src="pic/AdditiveColor.png" style="height: 400px;float: left; margin-right: 15px;">
     <p>Для браузеров используется RGB модель цветовоспроизведения, где R,G,B — первые буквы основных цветов(красный, зеленый, синий) — и выбор именно этих цветов обусловлен особенностями цветовосприятия человеческого глаза. Согласно этой модели, любой цвет является результатом смешения основных цветов в разных пропорциях.</p>
   </section>
-  <section class="slide">
+  <section class="slide" id="color-hex">
       <h2>Hex-цвета</h2>
       <img src="pic/hex-additive-and-subtractive.png" style="width: 300px; float: left; margin: 0 10px 10px 0;">
       <p>Цвет можно задать в виде 16-ричного кода.</p>
@@ -610,12 +610,12 @@
       <p>Например: <code>color: #000000;</code> — черный цвет, <code>color: #ff00ff;</code> — цвет фуксии.</p>
 
   </section>
-  <section class="slide">
+  <section class="slide" id="color-rgb">
     <h2>RGB формат</h2>
-    <p>Также можно задать цвет в rgb-формате: воспользовавшись функцией rgb(r, g, b) где соответственно r, g и b — соответствующие интенсивности красного, зеленого и синего цветов.</p>
+    <p>Также можно задать цвет в rgb-формате: воспользовавшись функцией rgb(r, g, b), где r, g и b — соответствующие интенсивности красного, зеленого и синего цветов.</p>
     <p>Например: <code>color: rgb(0,0,0);</code> — черный цвет, color: <code>rgb(255, 0, 255);</code> — цвет фуксии.</p>
   </section>
-  <section class="slide">
+  <section class="slide" id="color-rgba">
     <h2>RGBA формат</h2>
     <p>Но это еще не все: мы можем задать полупрозрачный цвет, воспользовавшись функцией rgba(r,g,b,a), где параметры r,g и b имеют точно такой же смысл, как и в функции rgb, а последний, четвертый параметр «a» (alpha) может принимать значения от 0 до 1 и означает степень непрозрачности цвета, где 0 — полная прозрачность, 1 — полная непрозрачность.</p>
     <p>color: <code>rgba(0,0,0,0.5)</code> — черный цвет, прозрачный наполовину<br>
