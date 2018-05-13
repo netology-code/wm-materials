@@ -26,6 +26,10 @@ gulp.task('prepare', () => {
 			'$1shower/themes/ribbon/$3', { skipBinary: true }
 		))
 		.pipe(replace(
+			/(<link rel="stylesheet" href=")(node_modules\/shower-ribbon\/)(styles\/screen-4x3.css">)/g,
+			'$1shower/themes/ribbon/$3', { skipBinary: true }
+		))
+		.pipe(replace(
 			/(<script src=")(node_modules\/shower-core\/)(shower.min.js"><\/script>)/g,
 			'$1shower/$3', { skipBinary: true }
 		));
