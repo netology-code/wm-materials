@@ -85,8 +85,8 @@ h2:not(.shout):before {
 
 /* Стили для обложки презентации */
 #cover {
-  background: url(../i/logo.svg) no-repeat 10% 10%;
-  background-size: 30%;
+  background: url(../i/logo.svg) no-repeat 15% 15%;
+  background-size: 35%;
   background-color: #00acf2;
   position: relative;
   letter-spacing: normal;
@@ -359,7 +359,7 @@ dt::after {
 
 /* Сплошной текст на 2 колонки */
 .double {
-  font-size: 18px;
+  font-size: 26px;
   line-height: 1.5;
 }
 
@@ -410,7 +410,7 @@ dt::after {
 /* Последний слайд */
 .last {
   background: url(../i/logo.svg) no-repeat center 20%;
-  background-size: 35%;
+  background-size: 40%;
   background-color: #00acf2;
   color: #00acf2;
   text-align: center;
