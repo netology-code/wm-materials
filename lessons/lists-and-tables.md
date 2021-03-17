@@ -226,7 +226,7 @@
 Всего в поход ходили 8 детей. Это значит, что нам нужно создать 8 строк.
 
 Открываем таблицу при помощи родительского тега table и размещаем внутри 8 строк – `tr`. Внутри строк ничего писать не нужно. Все данные будут лежать в ячейках, находящихся в строке.
-[http://codepen.io/solarrust/pen/ZONOJV?editors=1000](http://codepen.io/solarrust/pen/ZONOJV?editors=1000)
+[https://codepen.io/solarrust/pen/NAkQZZ?editors=1000](https://codepen.io/solarrust/pen/NAkQZZ?editors=1000)
 
 Далее в каждой строке нам нужно создать 3 ячейки – с именем ребенка, с названием команды и с количеством заработанных баллов.
 [http://codepen.io/solarrust/pen/ZONOJV?editors=1000](http://codepen.io/solarrust/pen/ZONOJV?editors=1000)
